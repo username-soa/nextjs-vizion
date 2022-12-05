@@ -1,10 +1,13 @@
 import styled from "styled-components";
 import Button from "../elements/Button";
 
-const PricingCard = ({ name, price, features, handleClick, isMain }) => {
+const PricingCard = ({ name, price, isMain, features, handleClick }) => {
   return (
     <Container isMain={isMain}>
-      <h4 className="pricing-h4">{name}</h4>
+      <div className="pricing-card-top">
+        <h4 className="pricing-h4">{name}</h4>
+        {isMain && <span className="span-isMain">Popular</span>}
+      </div>
       <p className="pricing-p">Starter package plan</p>
       <p className="price-p">
         ${price}
@@ -91,6 +94,19 @@ const Container = styled.div`
     justify-content: center;
     align-items: center;
     padding: 1em 0;
+  }
+  .pricing-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 0.25em;
+  }
+  .span-isMain {
+    border-radius: 12px;
+    background: #f9f9f9;
+    color: ${({ theme }) => theme.colors.primary};
+    font-size: 12px;
+    padding: 7px 10px;
   }
   @media only screen and (max-width: 1000px) {
     transform: none;

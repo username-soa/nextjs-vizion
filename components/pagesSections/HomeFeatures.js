@@ -104,14 +104,6 @@ const HomeFeatures = () => {
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
     },
   ];
-  const variants = {
-    hidden: { scale: 0, opacity: 0 },
-    visible: {
-      scale: 1,
-      opacity: 1,
-    },
-    exit: { scale: 0, opacity: 0 },
-  };
   const variants2 = {
     hidden: { opacity: 0 },
     visible: {
@@ -158,7 +150,7 @@ const HomeFeatures = () => {
               animate="visible"
               initial="hidden"
               exit="exit"
-              variants={variants}
+              variants={variants2}
               key={currentItem.index}
             >
               <div className={`item-div`}>{currentItem.item.icon}</div>
@@ -176,6 +168,20 @@ const HomeFeatures = () => {
               {currentItem.item.description}
             </motion.p>
           </AnimatePresence>
+          <div className="span-dots-container">
+            {data.map((item, index) => {
+              return (
+                <span
+                  className={
+                    ref.current === index
+                      ? "span-dot dot-highlighted"
+                      : "span-dot"
+                  }
+                  key={`span-dot-${index}`}
+                />
+              );
+            })}
+          </div>
         </TestContainer>
       </div>
     </Container>
@@ -247,6 +253,7 @@ const Container = styled.section`
 `;
 
 const TestContainer = styled.div`
+  gap: 1em;
   padding: 1em;
   display: flex;
   flex-direction: column;
@@ -275,16 +282,15 @@ const TestContainer = styled.div`
     font-size: 17px;
     line-height: 2em;
     color: #444;
-    margin: 0.75em 0;
     text-align: left;
     opacity: 0.9;
     font-weight: 300;
+    min-height: 180px;
   }
   .features-details-top {
     display: flex;
     gap: 1em;
     align-items: center;
-    margin-bottom: 1em;
     .item-div {
       display: flex;
       justify-content: center;
@@ -296,11 +302,34 @@ const TestContainer = styled.div`
       z-index: 3;
       cursor: pointer;
       border: 1px solid #e6e6e6;
+      transition: all 0.3s ease-in-out;
       background: ${({ theme }) => theme.colors.gradientBG};
       svg {
         fill: #fff;
       }
+      &:hover {
+        background: #fff;
+        border: 1px solid ${({ theme }) => theme.colors.primary};
+        svg {
+          fill: ${({ theme }) => theme.colors.primary};
+        }
+      }
     }
+  }
+  .span-dots-container {
+    gap: 0.4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .span-dot {
+    background: #ccc;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+  .dot-highlighted {
+    background: ${({ theme }) => theme.colors.primary};
   }
   @media only screen and (max-width: 1200px) {
     h2 {

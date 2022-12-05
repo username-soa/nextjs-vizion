@@ -64,8 +64,8 @@ const Contact = () => {
         {popup && (
           <Popup
             type="success"
-            title="Success"
-            description="Your message has been sent successfully"
+            title="Notice"
+            description="This is only a UI template, for demonstration purposes only"
             handleClose={() => {
               setPopup(!popup);
             }}

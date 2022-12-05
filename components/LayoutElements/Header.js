@@ -1,16 +1,17 @@
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import styled from "styled-components";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 import img from "../../assets/logo.png";
-import img2 from "../../assets/logo-sticky.png";
 import NavLink from "../elements/NavLink";
+import img2 from "../../assets/logo-sticky.png";
 
 const Header = ({ setSideMenu, sideMenu }) => {
   const [padding, setPadding] = useState(40);
   const [boxShadow, setBoxShadow] = useState(0);
   const [clientWindowHeight, setClientWindowHeight] = useState("");
-  const [backgroundTransparacy, setBackgroundTransparacy] = useState(0);
+  const [backgroundTransparency, setBackgroundTransparency] = useState(0);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -27,7 +28,7 @@ const Header = ({ setSideMenu, sideMenu }) => {
     if (backgroundTransparacyVar < 1) {
       let paddingVar = 40 - backgroundTransparacyVar * 20;
       let boxShadowVar = backgroundTransparacyVar * 0.1;
-      setBackgroundTransparacy(backgroundTransparacyVar);
+      setBackgroundTransparency(backgroundTransparacyVar);
       setPadding(paddingVar);
       setBoxShadow(boxShadowVar);
       // console.log("backgroundTransparacyVar is : ", backgroundTransparacyVar);
@@ -39,7 +40,7 @@ const Header = ({ setSideMenu, sideMenu }) => {
       <div
         className="header-content-wrp"
         style={{
-          background: `rgba(255, 255, 255, ${backgroundTransparacy})`,
+          background: `rgba(255, 255, 255, ${backgroundTransparency})`,
           paddingTop: `${padding}px`,
           paddingBottom: `${padding / 2}px`,
           boxShadow: `rgb(0 0 0 / ${boxShadow}) 0px 0px 20px 6px`,
@@ -48,7 +49,7 @@ const Header = ({ setSideMenu, sideMenu }) => {
         <div className="header-content">
           <div className="header-links-wrp">
             <div className="logo-wrp">
-              {backgroundTransparacy > 0.5 ? (
+              {backgroundTransparency > 0.5 ? (
                 <Link href={"/"}>
                   <a>
                     <Image src={img2} alt="logo" />
@@ -66,13 +67,13 @@ const Header = ({ setSideMenu, sideMenu }) => {
               <NavLink
                 href="/"
                 activeClassName={
-                  backgroundTransparacy > 0.45 ? "active-dark" : "active-light"
+                  backgroundTransparency > 0.45 ? "active-dark" : "active-light"
                 }
                 exact
               >
                 <a
                   className={
-                    backgroundTransparacy > 0.45
+                    backgroundTransparency > 0.45
                       ? "nav-link dark-color"
                       : "nav-link light-color"
                   }
@@ -83,13 +84,13 @@ const Header = ({ setSideMenu, sideMenu }) => {
               <NavLink
                 href="/about"
                 activeClassName={
-                  backgroundTransparacy > 0.45 ? "active-dark" : "active-light"
+                  backgroundTransparency > 0.45 ? "active-dark" : "active-light"
                 }
                 exact
               >
                 <a
                   className={
-                    backgroundTransparacy > 0.45
+                    backgroundTransparency > 0.45
                       ? "nav-link dark-color"
                       : "nav-link light-color"
                   }
@@ -100,13 +101,13 @@ const Header = ({ setSideMenu, sideMenu }) => {
               <NavLink
                 href="/features"
                 activeClassName={
-                  backgroundTransparacy > 0.45 ? "active-dark" : "active-light"
+                  backgroundTransparency > 0.45 ? "active-dark" : "active-light"
                 }
                 exact
               >
                 <a
                   className={
-                    backgroundTransparacy > 0.45
+                    backgroundTransparency > 0.45
                       ? "nav-link dark-color"
                       : "nav-link light-color"
                   }
@@ -117,13 +118,13 @@ const Header = ({ setSideMenu, sideMenu }) => {
               <NavLink
                 href="/contact"
                 activeClassName={
-                  backgroundTransparacy > 0.45 ? "active-dark" : "active-light"
+                  backgroundTransparency > 0.45 ? "active-dark" : "active-light"
                 }
                 exact
               >
                 <a
                   className={
-                    backgroundTransparacy > 0.45
+                    backgroundTransparency > 0.45
                       ? "nav-link dark-color"
                       : "nav-link light-color"
                   }
@@ -134,13 +135,13 @@ const Header = ({ setSideMenu, sideMenu }) => {
               <NavLink
                 href="/pricing"
                 activeClassName={
-                  backgroundTransparacy > 0.45 ? "active-dark" : "active-light"
+                  backgroundTransparency > 0.45 ? "active-dark" : "active-light"
                 }
                 exact
               >
                 <a
                   className={
-                    backgroundTransparacy > 0.45
+                    backgroundTransparency > 0.45
                       ? "nav-link dark-color"
                       : "nav-link light-color"
                   }
@@ -154,7 +155,9 @@ const Header = ({ setSideMenu, sideMenu }) => {
             <Link href="/login">
               <a
                 className={
-                  backgroundTransparacy > 0.45 ? "auth-link-dark" : "auth-links"
+                  backgroundTransparency > 0.45
+                    ? "auth-link-dark"
+                    : "auth-links"
                 }
               >
                 Login
@@ -163,7 +166,7 @@ const Header = ({ setSideMenu, sideMenu }) => {
             <Link href="/register">
               <a
                 className={
-                  backgroundTransparacy > 0.45
+                  backgroundTransparency > 0.45
                     ? "auth-link-dark"
                     : "auth-links register-link"
                 }
@@ -181,7 +184,7 @@ const Header = ({ setSideMenu, sideMenu }) => {
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
               style={
-                backgroundTransparacy > 0.5
+                backgroundTransparency > 0.5
                   ? { fill: "#640178" }
                   : { fill: "#fff" }
               }

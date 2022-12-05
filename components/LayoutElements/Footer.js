@@ -80,12 +80,12 @@ const Footer = () => {
           <Link href={"/about"}>
             <a className="footer-top-link">About</a>
           </Link>
-          <Link href={"/features"}>
-            <a className="footer-top-link">Features</a>
-          </Link>
 
           <Link href={"/pricing"}>
             <a className="footer-top-link">Pricing</a>
+          </Link>
+          <Link href={"/features"}>
+            <a className="footer-top-link">Features</a>
           </Link>
         </div>
         <div className="footer-top-column">
@@ -106,14 +106,14 @@ const Footer = () => {
         </div>
         <div className="footer-top-column">
           <h4 className="footer-top-h4">Find Us</h4>
-          <a className="footer-top-link" href="#">
-            1 Newgate, London, Croydon, CR0 2FB
+          <a className="footer-top-link" href="tel:+66 0410 793 294">
+            +66 0410 793 294
           </a>
           <a className="footer-top-link" href="vizion@contact.com">
             vizion@contact.com
           </a>
-          <a className="footer-top-link" href="tel:+66 0410 793 294">
-            +66 0410 793 294
+          <a className="footer-top-link" href="#">
+            1 Newgate, London, Croydon, CR0 2FB
           </a>
         </div>
       </div>
