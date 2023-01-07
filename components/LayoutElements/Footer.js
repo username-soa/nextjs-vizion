@@ -27,6 +27,7 @@ const Footer = () => {
                 className="social-link"
                 href="https://facebook.com/"
                 target="_blank"
+                rel="noreferrer"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -41,6 +42,7 @@ const Footer = () => {
                 className="social-link"
                 href="https://twitter.com/"
                 target="_blank"
+                rel="noreferrer"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -55,6 +57,7 @@ const Footer = () => {
                 className="social-link"
                 href="https://youtube.com/"
                 target="_blank"
+                rel="noreferrer"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -117,12 +120,13 @@ const Footer = () => {
           </a>
         </div>
       </div>
-      <div className="footer-bottom-socials">
+      {/* <div className="footer-bottom-socials">
         <div className="footer-social">
           <a
             className="social-link"
             href="https://facebook.com/"
             target="_blank"
+            rel="noreferrer"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -137,6 +141,7 @@ const Footer = () => {
             className="social-link"
             href="https://twitter.com/"
             target="_blank"
+            rel="noreferrer"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -151,6 +156,7 @@ const Footer = () => {
             className="social-link"
             href="https://youtube.com/"
             target="_blank"
+            rel="noreferrer"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -166,7 +172,7 @@ const Footer = () => {
           <p>© {new Date().getFullYear()} Vizion, All rights reserved.</p>
           <p>Site made by SOA</p>
         </div>
-      </div>
+      </div> */}
     </Container>
   );
 };
@@ -179,9 +185,9 @@ const Container = styled.footer`
   background-color: #f3efef;
   width: clamp(70%, 1140px, 90%);
   margin: 1em auto 2em auto;
-  .footer-bottom-socials {
+  /* .footer-bottom-socials {
     display: none;
-  }
+  } */
   .footer-top-socials {
     margin: auto 1em 0 0;
     gap: 1em;
@@ -305,12 +311,12 @@ const Container = styled.footer`
     .footer-top-socials {
       display: none;
     }
-    .footer-bottom-socials {
+    /* .footer-bottom-socials {
       display: flex;
       flex-direction: column;
       gap: 2em;
       margin-top: 2em;
-    }
+    } */
     .footer-top-info {
       margin: 1em 0;
     }

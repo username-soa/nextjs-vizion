@@ -89,7 +89,7 @@ const LoginForm = ({ handleSubmit, feedback }) => {
             </div>
 
             <div className="form-contact-bottom">
-              <a href="#">Don't remember your password?</a>
+              <a href="#">Don&apos;t remember your password?</a>
               <Button
                 handleClick={handleSubmit}
                 title={isSubmitting ? "Login..." : "Login"}

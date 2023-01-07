@@ -7,7 +7,7 @@ import PricingCard from "../components/CartElements/PricingCard";
 import Popup from "../components/elements/Popup";
 import AboutPartners from "../components/pagesSections/AboutPartners";
 
-const pricing = () => {
+const Pricing = () => {
   const [popup, setPopup] = useState(false);
   const data = [
     {
@@ -114,7 +114,7 @@ const pricing = () => {
   );
 };
 
-export default pricing;
+export default Pricing;
 
 const Container = styled.div`
   .pricing-container {

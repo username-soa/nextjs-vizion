@@ -36,7 +36,7 @@ const RegisterForm = ({ handleSubmit, feedback }) => {
       <div className="login-input-row register-select-div">
         <input type="checkbox" />
         <p>
-          I agree and acknowledge Vizion's
+          I agree and acknowledge Vizion&apos;s
           <Link href="/privacy">
             <a> Privacy Policy.</a>
           </Link>

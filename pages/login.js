@@ -25,7 +25,7 @@ const Login = () => {
           <div className="login-header-link">
             <p>
               <span className="register-link-left">
-                Don't have an account ?
+                Don&apos;t have an account ?
               </span>
               <Link href={"/register"}>
                 <a>

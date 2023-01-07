@@ -23,15 +23,15 @@ const Header = ({ setSideMenu, sideMenu }) => {
   };
 
   useEffect(() => {
-    let backgroundTransparacyVar = clientWindowHeight / 600;
+    let backgroundTransparencyVar = clientWindowHeight / 600;
 
-    if (backgroundTransparacyVar < 1) {
-      let paddingVar = 40 - backgroundTransparacyVar * 20;
-      let boxShadowVar = backgroundTransparacyVar * 0.1;
-      setBackgroundTransparency(backgroundTransparacyVar);
+    if (backgroundTransparencyVar < 1) {
+      let paddingVar = 40 - backgroundTransparencyVar * 20;
+      let boxShadowVar = backgroundTransparencyVar * 0.1;
+      setBackgroundTransparency(backgroundTransparencyVar);
       setPadding(paddingVar);
       setBoxShadow(boxShadowVar);
-      // console.log("backgroundTransparacyVar is : ", backgroundTransparacyVar);
+      // console.log("backgroundTransparencyVar is : ", backgroundTransparencyVar);
     }
   }, [clientWindowHeight]);
 
